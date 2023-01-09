@@ -51,16 +51,16 @@ num1 = parseInt(num1);
 num2 = parseInt(num2);
 console.log(num1, op, num2)
 if (op == "+") {
-answer = num1 + num 2;
+answer = num1 + num2;
 }
 if (op == "-") {
-answer = num1 - num 2;
+answer = num1 - num2;
 }
 if (op == "x") {
-answer = num1 * num 2;
+answer = num1 * num2;
 }
 if (op == "/") {
-answer = num1 / num 2;
+answer = num1 / num2;
 }
 $screen.append(answer);
 num1 = 11;
