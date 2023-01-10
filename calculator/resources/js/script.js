@@ -1,5 +1,6 @@
-var num1 = 11;
-var num2 = 11;
+var currentNumber = 1;
+var num1;
+var num2;
 
 var $screen = $("#screen");
 var $number = $(".number");
@@ -7,42 +8,59 @@ var $number = $(".number");
 $number.on('click', function() {
 var numberPressed = $(this).html();
 $screen.append(numberPressed);
-if (num1 == 11) {
+
+if (currentNumber == 1) {
+if (num1 == null) {
  num1 = numberPressed;
-} else if (num2 == 11) {
+} else {
+num1 = num1 + numberPressed;
+}
+}
+if (currentNumber == 2) {
+if (num2 == null) {
  num2 = numberPressed;
+} else {
+num2 = num2 + numberPressed;
+}
 }
 });
 
 
-document.getElementById("clear").onclick = function writeClear()
+$("#clear").on('click', function()
 {
 $("#screen").empty()
-}
+num1 = null;
+num2 = null;
+currentNumber = 1;
+});
 
-document.getElementById("pluse").onclick = function writePluse()
+$("#pluse").on('click', function()
 {
 $("#screen").append("+")
 op = "+";
-}
+currentNumber++;
+})
 
-document.getElementById("minus").onclick = function writeMinus()
+$("#minus").on('click', function()
 {
 $("#screen").append("-")
 op = "-";
-}
+currentNumber++;
+})
 
-document.getElementById("multiply").onclick = function writeMultiply()
+$("#multiply").on('click', function()
 {
 $("#screen").append("x")
 op = "x";
-}
+currentNumber++;
+})
 
-document.getElementById("divide").onclick = function writeDivide()
+$("#divide").on('click', function()
 {
 $("#screen").append("/")
 op = "/";
-}
+currentNumber++;
+})
 
 document.getElementById("equal").onclick = function writeEqual()
 {
