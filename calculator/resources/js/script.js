@@ -1,11 +1,16 @@
 var currentNumber = 1;
 var num1;
 var num2;
+var click = 1;
 
 var $screen = $("#screen");
 var $number = $(".number");
 
 $number.on('click', function() {
+if (click > 8){
+return;
+}
+click++;
 var numberPressed = $(this).html();
 $screen.append(numberPressed);
 
@@ -25,6 +30,17 @@ num2 = num2 + numberPressed;
 }
 });
 
+function more(){
+if (click > 8){
+click = click - 5;
+}
+if (currentNumber == 2) {
+findAnswer();
+$screen.empty();
+$screen.append(num1);
+}
+currentNumber = 2;
+}
 
 $("#clear").on('click', function()
 {
@@ -32,42 +48,40 @@ $("#screen").empty()
 num1 = null;
 num2 = null;
 currentNumber = 1;
+click = 0;
 });
 
 $("#pluse").on('click', function()
 {
+more()
 $("#screen").append("+")
 op = "+";
-currentNumber++;
 })
 
 $("#minus").on('click', function()
 {
+more()
 $("#screen").append("-")
 op = "-";
-currentNumber++;
 })
 
 $("#multiply").on('click', function()
 {
+more()
 $("#screen").append("x")
 op = "x";
-currentNumber++;
 })
 
 $("#divide").on('click', function()
 {
+more()
 $("#screen").append("/")
 op = "/";
-currentNumber++;
 })
 
-document.getElementById("equal").onclick = function writeEqual()
-{
-$("#screen").append("=")
+function findAnswer() {
 num1 = parseInt(num1);
 num2 = parseInt(num2);
-console.log(num1, op, num2)
 if (op == "+") {
 answer = num1 + num2;
 }
@@ -80,7 +94,21 @@ answer = num1 * num2;
 if (op == "/") {
 answer = num1 / num2;
 }
+num1 = answer;
+num2 = null;
+currentNumber = 1;
+}
+
+
+$("#equal").on('click', function()
+{
+$screen.append("=");
+findAnswer();
+if (click > 8){
+$screen.empty();
+var answerLength = answer.toString();
+click = answerLength.length;
+console.log(click);
+}
 $screen.append(answer);
-num1 = 11;
-num2 = 11;
-};
+})
