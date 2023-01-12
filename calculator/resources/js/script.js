@@ -108,7 +108,6 @@ if (click > 8){
 $screen.empty();
 var answerLength = answer.toString();
 click = answerLength.length;
-console.log(click);
 }
 $screen.append(answer);
 })
