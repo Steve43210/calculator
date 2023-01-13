@@ -61,7 +61,7 @@ if(num1 != null) {
 more();
 $screen.append("+");
 op = "+";
-);
+};
 return;
 })
 
@@ -71,7 +71,7 @@ if(num1 != null) {
 more();
 $screen.append("-");
 op = "-";
-);
+};
 return;
 })
 
@@ -81,7 +81,7 @@ if(num1 != null) {
 more();
 $screen.append("x");
 op = "x";
-);
+};
 return;
 })
 
@@ -91,7 +91,7 @@ if(num1 != null) {
 more();
 $screen.append("/");
 op = "/";
-);
+};
 return;
 })
 
