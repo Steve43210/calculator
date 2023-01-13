@@ -1,18 +1,19 @@
 var currentNumber = 1;
 var num1;
 var num2;
-var click = 1;
+var click = 0;
 
 var $screen = $("#screen");
 var $number = $(".number");
 
 $number.on('click', function() {
-if (click > 8){
+if (click > 12){
 return;
 }
 click++;
 var numberPressed = $(this).html();
 $screen.append(numberPressed);
+$("#clear").css('background-color', '#cc1423');
 
 if (currentNumber == 1) {
 if (num1 == null) {
@@ -27,6 +28,7 @@ if (num2 == null) {
 } else {
 num2 = num2 + numberPressed;
 }
+$("#equal").css('background-color', '#cc1423');
 }
 });
 
@@ -49,6 +51,8 @@ num1 = null;
 num2 = null;
 currentNumber = 1;
 click = 0;
+$("#clear").css('background-color', 'gray');
+$("#equal").css('background-color', 'gray');
 });
 
 $("#pluse").on('click', function()
@@ -102,6 +106,13 @@ currentNumber = 1;
 
 $("#equal").on('click', function()
 {
+var element = document.getElementById('equal');
+var style = window.getComputedStyle(element);
+var backgroundColor = "background-color"
+var buttonColor = element.style.backgroundColor;
+if(buttonColor == 'gray'){
+return;
+}
 $screen.append("=");
 findAnswer();
 if (click > 8){
@@ -110,4 +121,5 @@ var answerLength = answer.toString();
 click = answerLength.length;
 }
 $screen.append(answer);
+$("#equal").css('background-color', 'gray');
 })
