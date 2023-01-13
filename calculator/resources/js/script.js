@@ -57,30 +57,42 @@ $("#equal").css('background-color', 'gray');
 
 $("#pluse").on('click', function()
 {
+if(num1 != null)
 more()
-$("#screen").append("+")
+$screen.append("+")
 op = "+";
+);
+return;
 })
 
 $("#minus").on('click', function()
 {
+if(num1 != null)
 more()
-$("#screen").append("-")
+$screen.append("-")
 op = "-";
+);
+return;
 })
 
 $("#multiply").on('click', function()
 {
+if(num1 != null) {
 more()
-$("#screen").append("x")
+$screen.append("x")
 op = "x";
+);
+return;
 })
 
 $("#divide").on('click', function()
 {
+if(num1 != null)
 more()
-$("#screen").append("/")
+$screen.append("/")
 op = "/";
+);
+return;
 })
 
 function findAnswer() {
