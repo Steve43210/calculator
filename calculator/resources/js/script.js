@@ -57,9 +57,9 @@ $("#equal").css('background-color', 'gray');
 
 $("#pluse").on('click', function()
 {
-if(num1 != null)
-more()
-$screen.append("+")
+if(num1 != null) {
+more();
+$screen.append("+");
 op = "+";
 );
 return;
@@ -67,9 +67,9 @@ return;
 
 $("#minus").on('click', function()
 {
-if(num1 != null)
-more()
-$screen.append("-")
+if(num1 != null) {
+more();
+$screen.append("-");
 op = "-";
 );
 return;
@@ -78,8 +78,8 @@ return;
 $("#multiply").on('click', function()
 {
 if(num1 != null) {
-more()
-$screen.append("x")
+more();
+$screen.append("x");
 op = "x";
 );
 return;
@@ -87,9 +87,9 @@ return;
 
 $("#divide").on('click', function()
 {
-if(num1 != null)
-more()
-$screen.append("/")
+if(num1 != null) {
+more();
+$screen.append("/");
 op = "/";
 );
 return;
